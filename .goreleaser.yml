@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
+
+build:
+  skip: true
+
+changelog:
+  sort: asc
+  use: git
+  filters:
+    include:
+      - "^feat:"
+      - "^fix:"
+      - "^perf:"
+      - "^refactor:"
+
+release:
+  github:
+    owner: cethien
+    name: gomponents-hyperscript

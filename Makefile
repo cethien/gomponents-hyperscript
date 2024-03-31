@@ -15,3 +15,7 @@ cover:
 .PHONY: test
 test:
 	@go test -coverprofile=cover.out -shuffle on ./...
+
+.PHONY: snapshot
+snapshot:
+	@goreleaser release --snapshot --clean
