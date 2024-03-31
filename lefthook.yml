@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lefthook.json
+
+commit-msg:
+  parallel: true
+  commands:
+    commitlint:
+      run: bun commitlint --edit {1}
