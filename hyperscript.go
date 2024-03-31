@@ -1,7 +1,9 @@
+// Package hyperscript adds hyperscript components to gomponents.
 package hyperscript
 
 import (
 	g "github.com/maragudk/gomponents"
+	//lint:ignore ST1001 this is fine
 	. "github.com/maragudk/gomponents/html"
 )
 
