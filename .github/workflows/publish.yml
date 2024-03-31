@@ -2,17 +2,25 @@ name: publish
 
 on:
   pull_request:
-    branches: 
+    branches:
       - main
   push:
-    branches: 
+    branches:
       - main
 
 jobs:
   goreleaser:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Semantic Release
+        uses: cycjimmy/semantic-release-action@v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
 
       - name: Setup Go
         uses: actions/setup-go@v4
@@ -26,4 +34,4 @@ jobs:
           version: latest
           args: release --clean
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
