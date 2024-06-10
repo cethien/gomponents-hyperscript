@@ -3,7 +3,7 @@ module github.com/cethien/gomponents-hyperscript
 go 1.22.1
 
 require (
-	github.com/maragudk/gomponents v0.20.2
+	github.com/maragudk/gomponents v0.20.3
 	github.com/stretchr/testify v1.9.0
 )
 
